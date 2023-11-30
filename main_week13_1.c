@@ -3,23 +3,28 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-struct student{
-	int student_number;
-	char student_name[100];
-	double student_grade;
+struct point{
+	int x;
+	int y;
 };
 int main(int argc, char *argv[]) {
 	//instance 선언 
-	struct student s1 = {123, "JUYEOP", 4.3};
+	struct point p1, p2;
+	int xdiff, ydiff;
+	double dist;
 	
-	//다른값 변경
-	s1.student_number = 123456;
-	s1.student_name[0] = 'c';
-	s1.student_grade = 0.7;
-	//출력 
-	printf("student_number : %i\n", s1.student_number);
-	printf("student_name : %s\n", s1.student_name);
-	printf("student_grade : %f\n", s1.student_grade);
+	printf("input p1 coordinate(x y) : ");
+	scanf("%d %d", &p1.x, &p1.y);
+	
+	printf("input p2 coordinate(x y) : ");
+	scanf("%d %d", &p2.x, &p2.y);
+	
+	//distance
+	xdiff = p2.x - p1.x;
+	ydiff = p2.y - p1. y;
+	dist = sqrt(xdiff*xdiff + ydiff*ydiff);
+	
+	printf("distance : %f\n", dist);
 	
 	system("PAUSE");
 	return 0;
